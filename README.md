@@ -20,3 +20,5 @@
 - Install fonts inside fonts folder.
 - Move folder to /home/YOUR_USERNAME/.conky 
 - Open Conky Manager and enable this in widgets tab.
+
+**Enjoy ^^**
