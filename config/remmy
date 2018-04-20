@@ -1,0 +1,113 @@
+use_xft yes
+#Default font and font sizes
+xftfont Times New Roman:size=11
+xftalpha 0.8
+text_buffer_size 2048
+
+# Update interval in seconds
+update_interval 1
+
+# This is the number of times Conky will update before quitting.
+total_run_times 0
+
+own_window yes
+own_window_transparent yes
+#own_window_type override
+#own_window_type desktop
+own_window_type normal #use this if you want a nice shadow to appear around conky
+
+# If own_window is yes, these window manager hints may be used
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 220 0
+
+draw_shades no
+
+draw_outline no
+
+draw_borders no
+
+stippled_borders 0
+
+border_margin 5
+
+border_width 1
+
+# Default colors and also border colors
+default_color white
+own_window_colour 000000
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_left
+#alignment bottom_left
+#alignment bottom_right
+#alignment middle_right
+
+# Gap between borders of screen and text
+gap_x 20
+gap_y 50
+
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about? This only affects certain objects.
+use_spacer none
+
+own_window_argb_value 0
+own_window_argb_visual yes
+TEXT
+#Things show on your desktop
+${font Conky Icons by Carelli:size=16}Ŵ ${font Capture it:size=16}SYSTEM ${hr 2}
+#Command execute to know the distribution
+${font Zekton:Bold:size=12}${alignc 0}${exec cut -d '\' -f 1 /etc/issue}
+#elementaryOS logon icon
+${font SVGFont 1:size=60}${alignc 65}E
+#Hostname or customizing your name by replacing the ${nodename}
+${voffset -85}${alignc =10}${font Capture it:size=18}${nodename}
+#System.
+${font Conky Icons by Carelli:size=14}A${font} CPU 1: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,100}
+${font Conky Icons by Carelli:size=14}A${font} CPU 2: ${cpu cpu2}% ${alignr}${cpubar cpu2 8,100}
+${font Conky Icons by Carelli:size=14}A${font} CPU 3: ${cpu cpu3}% ${alignr}${cpubar cpu2 8,100}
+${font Conky Icons by Carelli:size=14}A${font} CPU 4: ${cpu cpu4}% ${alignr}${cpubar cpu2 8,100}
+${font StyleBats:Bold:size=16}g${font} RAM: $mem     $memperc% ${alignr}${membar 8,100}
+${font StyleBats:Bold:size=16}j${font} SWAP: $swap     $swapperc% ${alignr}${swapbar 8,100}
+${font Webdings:Bold:size=16}~${font}Top Mem Usage: ${top_mem name 1} ${alignr} ${top_mem mem 1}%
+${font Conky Icons by Carelli:size=14}ǘ${font} CPU-Temp:${alignr}${hwmon temp 1}°C
+${font StyleBats:Bold:size=16}q${font} Uptime: ${alignr}${uptime}
+#Storage
+${font Conky Icons by Carelli:size=18}Ǒ ${font Capture it:size=16}SSD ${hr 2}
+${font Conky Icons by Carelli:size=14}M${font} ${voffset -5}Used:
+${voffset 4}${fs_used /}/${fs_size /} ${alignr}${fs_bar 8,100 /}
+${font Conky Icons by Carelli:size=14}ň${font} ${voffset -5}Free:
+${voffset 4}${fs_free /home}/${fs_size /home} ${alignr}${fs_bar_free 8,100 /home}
+#Network
+${font Conky Icons by Carelli:size=16}E ${font Capture it:size=16}NETWORK ${hr 2}${if_existing /proc/net/route wlo1}
+ ${voffset 4}${font Conky Icons by Carelli:size=14}Ǘ${font} SSID: ${alignr}${wireless_essid wlo1}
+${voffset 4}${font Conky Icons by Carelli:size=14}h${font} IP: ${alignr}${addrs wlo1}
+${font PizzaDude Bullets:size=14}O${font} Up Speed: ${upspeed wlo1}${alignr}${upspeedgraph wlo1 30,100 black black}
+${voffset 4}${font PizzaDude Bullets:size=14}U${font} Down Speed: ${downspeed wlo1}${alignr}${downspeedgraph wlo1 30,100 black black}
+${voffset 4}${font Conky Icons by Carelli:size=14}Ƃ${font} Upload: ${alignr}${totalup wlo1}
+${voffset 4}${font Conky Icons by Carelli:size=14}Ɓ${font} Dowload: ${alignr}${totaldown wlo1}
+
+
+
+
+${endif}
