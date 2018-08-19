@@ -12,8 +12,7 @@ total_run_times 0
 own_window yes
 own_window_transparent yes
 #own_window_type override
-#own_window_type desktop
-own_window_type normal #use this if you want a nice shadow to appear around conky
+own_window_type desktop
 
 # If own_window is yes, these window manager hints may be used
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
