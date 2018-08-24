@@ -11,10 +11,7 @@ total_run_times 0
 
 own_window yes
 own_window_transparent yes
-#own_window_type override
 own_window_type desktop
-
-# If own_window is yes, these window manager hints may be used
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
 # Use double buffering (reduces flicker, may not work for everyone)
@@ -86,8 +83,8 @@ TEXT
 ${font Capture it:size=16}SYSTEM ${hr 2}
 #Command exec cut ..  know the distribution
 ${font Zekton:Bold:size=12}${alignc 0}${exec cut -d '\' -f 1 /etc/issue}
-#Change this line if you wish to change the ElementaryOS Icon
-${voffset 10}${alignc =10}${font Glyphter:size=40}E
+#Change ubuntu's icon to your favorites one xD
+${voffset 10}${alignc =10}${font OpenLogos:size=40}u
 #Hostname
 ${voffset -55}${alignc =10}${font Capture it:size=18}Remmy Le
 #PC
@@ -112,8 +109,4 @@ ${font PizzaDude Bullets:size=14}O${font} Up Speed: ${upspeed wlo1}${alignr}${up
 ${voffset 4}${font PizzaDude Bullets:size=14}U${font} Down Speed: ${downspeed wlo1}${alignr}${downspeedgraph wlo1 30,100 black black}
 ${voffset 4}${font Conky Icons by Carelli:size=14}Ƃ${font} Upload: ${alignr}${totalup wlo1}
 ${voffset 4}${font Conky Icons by Carelli:size=14}Ɓ${font} Dowload: ${alignr}${totaldown wlo1}
-
-
-
-
 ${endif}
