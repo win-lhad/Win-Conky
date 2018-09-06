@@ -76,7 +76,7 @@ ${font Capture it:size=16}SYSTEM ${hr 2}
 ${font Zekton:Bold:size=12}${alignc 0}${exec cut -d '\' -f 1 /etc/issue}
 #Change ubuntu's icon to your favorites one xD
 ${voffset 10}${alignc =10}${font OpenLogos:size=40}u
-#Hostname
+#Change this to your name
 ${voffset -55}${alignc =10}${font Capture it:size=18}Remmy Le
 #PC
 ${font Conky Icons by Carelli:size=14}A${font} CPU 1: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,100}
